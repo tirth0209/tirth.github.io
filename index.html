@@ -1,13 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tirth Thakor | Portfolio</title>
+  <style>
+    body { margin:0; font-family: sans-serif; line-height:1.6; color:#333; }
+    header { background:#f8f8f8; padding:40px 20px; text-align:center; }
+    header h1 { margin:0; font-size:2.5em; }
+    header p { margin:10px 0 0; font-size:1.2em; color:#666; }
+    nav { text-align:center; margin:20px 0; }
+    nav a { margin:0 10px; color:#333; text-decoration:none; font-weight:bold; }
+    section { padding:60px 20px; max-width:1000px; margin:0 auto; }
+    .about img { max-width:200px; border-radius:50%; display:block; margin:0 auto 20px; }
+    .skills ul { list-style:none; padding:0; display:flex; flex-wrap:wrap; }
+    .skills li { background:#e0e0e0; margin:5px; padding:8px 12px; border-radius:4px; }
+    .portfolio-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px; }
+    .portfolio-item { border:1px solid #ddd; padding:10px; }
+    .contact form { max-width:500px; margin:0 auto; display:flex; flex-direction:column;}
+    .contact input, .contact textarea { padding:10px; margin:5px 0; border:1px solid #ccc; border-radius:4px; }
+    .contact button { padding:12px; border:none; background:#333; color:white; font-size:1em; border-radius:4px; cursor:pointer; }
+    footer { text-align:center; padding:40px 20px; background:#f0f0f0; color:#666; }
+  </style>
 </head>
 <body>
-  <h1>Hi, I'm Tirth👋</h1>
-  <p>Welcome to my portfolio website!</p>
+
+<header>
+  <h1>Tirth Thakor</h1>
+  <p>Web Developer | Portfolio</p>
+</header>
+
+<nav>
+  <a href="#about">About Me</a>
+  <a href="#experience">Experience</a>
+  <a href="#education">Education</a>
+  <a href="#skills">Skills</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about" class="about">
+  <img src="your-photo.jpg" alt="Tirth Thakor">
+  <h2>About Me</h2>
+  <p>Hi! I’m Tirth Thakor. I build awesome web experiences. [Add a short bio about your expertise, passions, and what you’re looking for.]</p>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <h3>Company Name – Job Title</h3>
+  <p><em>From Month Year – To Month Year</em></p>
+  <ul>
+    <li>Key responsibility or achievement #1</li>
+    <li>Key responsibility or achievement #2</li>
+    <li>Key responsibility or achievement #3</li>
+  </ul>
+  
+  <!-- Add more experience blocks as needed -->
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <h3>University / College Name</h3>
+  <p><em>Degree, Year</em></p>
+  <p>Any additional details or honors.</p>
+  
+  <!-- Add more education blocks as needed -->
+</section>
+
+<section id="skills" class="skills">
+  <h2>Skills</h2>
+  <ul>
+    <li>HTML5</li>
+    <li>CSS3</li>
+    <li>JavaScript</li>
+    <li>React / Angular / Vue (choose your stack)</li>
+    <li>Node.js</li>
+    <li>Git & GitHub</li>
+    <!-- Add more skills as needed -->
+  </ul>
+</section>
+
+<section id="portfolio">
+  <h2>Portfolio</h2>
+  <div class="portfolio-grid">
+    <div class="portfolio-item">
+      <img src="project1-thumb.jpg" alt="Project 1" style="width:100%">
+      <h3>Project 1 Title</h3>
+      <p>Short description of the project.</p>
+      <a href="https://linktoyourproject1.com" target="_blank">View Project</a>
+    </div>
+    <div class="portfolio-item">
+      <img src="project2-thumb.jpg" alt="Project 2" style="width:100%">
+      <h3>Project 2 Title</h3>
+      <p>Short description of the project.</p>
+      <a href="https://linktoyourproject2.com" target="_blank">View Project</a>
+    </div>
+    <!-- Add more portfolio items as needed -->
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Say Hello</h2>
+  <form action="YOUR-FORM-HANDLER-URL" method="post">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <p>Or email me at: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+</section>
+
+<footer>
+  <p>© 2025 Tirth Thakor. All Rights Reserved.</p>
+</footer>
+
 </body>
 </html>
