@@ -4,25 +4,128 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tirth Thakor | Portfolio</title>
+
   <style>
-    body { margin:0; font-family: sans-serif; line-height:1.6; color:#333; }
-    header { background:#f8f8f8; padding:40px 20px; text-align:center; }
-    header h1 { margin:0; font-size:2.5em; }
-    header p { margin:10px 0 0; font-size:1.2em; color:#666; }
-    nav { text-align:center; margin:20px 0; }
-    nav a { margin:0 10px; color:#333; text-decoration:none; font-weight:bold; }
-    section { padding:60px 20px; max-width:1000px; margin:0 auto; }
-    .about img { max-width:200px; border-radius:50%; display:block; margin:0 auto 20px; }
-    .skills ul { list-style:none; padding:0; display:flex; flex-wrap:wrap; }
-    .skills li { background:#e0e0e0; margin:5px; padding:8px 12px; border-radius:4px; }
-    .portfolio-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px; }
-    .portfolio-item { border:1px solid #ddd; padding:10px; }
-    .contact form { max-width:500px; margin:0 auto; display:flex; flex-direction:column;}
-    .contact input, .contact textarea { padding:10px; margin:5px 0; border:1px solid #ccc; border-radius:4px; }
-    .contact button { padding:12px; border:none; background:#333; color:white; font-size:1em; border-radius:4px; cursor:pointer; }
-    footer { text-align:center; padding:40px 20px; background:#f0f0f0; color:#666; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      transition: background-color 1s ease;
+      overflow-x: hidden;
+      color: #fff;
+    }
+
+    header {
+      padding: 40px 20px;
+      text-align: center;
+      background: rgba(0,0,0,0.3);
+    }
+    header h1 { margin: 0; font-size: 2.5em; }
+    header p { margin-top: 10px; font-size: 1.2em; }
+
+    nav { text-align: center; padding: 15px 0; background: rgba(0,0,0,0.2); }
+    nav a {
+      margin: 0 12px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      height: 100vh;
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    /* About Image */
+    .about img {
+      max-width: 180px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    /* Skills */
+    .skills ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .skills li {
+      background: rgba(255,255,255,0.2);
+      margin: 5px;
+      padding: 8px 12px;
+      border-radius: 4px;
+    }
+
+    /* Contact Form */
+    .contact form {
+      max-width: 450px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .contact input, .contact textarea {
+      padding: 12px;
+      margin: 6px 0;
+      border: none;
+      border-radius: 4px;
+    }
+    .contact button {
+      padding: 12px;
+      border: none;
+      background: #fff;
+      color: #000;
+      font-size: 1em;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 8px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: rgba(0,0,0,0.25);
+      color: #ddd;
+    }
+
+    /* ---------- 3D Floating Animation ---------- */
+    .floating-3d {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 180px;
+      height: 180px;
+      transform-style: preserve-3d;
+      animation: rotate3D 8s infinite linear;
+      pointer-events: none;
+      z-index: -1;
+    }
+    .floating-3d::before,
+    .floating-3d::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(45deg, #ff00cc, #00ffff);
+      border-radius: 20px;
+      transform: translateZ(40px);
+      filter: blur(10px);
+    }
+    .floating-3d::after {
+      transform: translateZ(-40px) rotateX(180deg);
+    }
+
+    @keyframes rotate3D {
+      0% { transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg); }
+      100% { transform: translate(-50%, -50%) rotateX(360deg) rotateY(360deg); }
+    }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -31,87 +134,80 @@
 </header>
 
 <nav>
+  <a href="#home">Home</a>
   <a href="#about">About Me</a>
   <a href="#experience">Experience</a>
-  <a href="#education">Education</a>
   <a href="#skills">Skills</a>
-  <a href="#portfolio">Portfolio</a>
   <a href="#contact">Contact</a>
 </nav>
 
-<section id="about" class="about">
-  <img src="C:\Users\deepd\Downloads\IMG_20250801_102953.jpg" alt="Tirth Thakor">
+<!-- 3D Floating Element -->
+<div class="floating-3d"></div>
+
+<!-- Home -->
+<section id="home" data-bg="#0d0d0d">
+  <h1>Welcome</h1>
+  <p>Thanks for visiting my portfolio!</p>
+</section>
+
+<!-- About -->
+<section id="about" class="about" data-bg="#1a237e">
+  <img src="profile.jpg" alt="Tirth Thakor">
   <h2>About Me</h2>
-  <p>Hi! I’m Tirth Thakor. I build awesome web experiences. [Add a short bio about your expertise, passions, and what you’re looking for.]</p>
+  <p>Hi! I’m Tirth Thakor. I build awesome web experiences with clean and modern user interfaces.</p>
 </section>
 
-<section id="experience">
+<!-- Experience -->
+<section id="experience" data-bg="#263238">
   <h2>Experience</h2>
-  <h3>Company Name – Job Title</h3>
-  <p><em>From Month Year – To Month Year</em></p>
-  <ul>
-    <li>6 months working experience in airtel airfiber </li>
-    
-  </ul>
-  
-  <!-- Add more experience blocks as needed -->
+  <h3>Airtel AirFiber — Technician</h3>
+  <p><em>6 Months Experience</em></p>
 </section>
 
-<section id="education">
-  <h2>Education</h2>
-  <h3>University / College Name</h3>
-  <p><em>Degree, Year</em></p>
-  <p>Any additional details or honors.</p>
-  
-  <!-- Add more education blocks as needed -->
-</section>
-
-<section id="skills" class="skills">
+<!-- Skills -->
+<section id="skills" class="skills" data-bg="#004d40">
   <h2>Skills</h2>
   <ul>
     <li>HTML</li>
     <li>CSS</li>
     <li>JavaScript</li>
-    <li>React / Angular / Vue (choose your stack)</li>
-    <li>Node.js</li>
+    <li>React / Angular / Vue</li>
     <li>Git & GitHub</li>
-    
   </ul>
 </section>
 
-<section id="portfolio">
-  <h2>Portfolio</h2>
-  <div class="portfolio-grid">
-    <div class="portfolio-item">
-      <img src="p1.jpg" alt="Project 1" style="width:100%">
-      <h3>Project 1 Title</h3>
-      <p>Short description of the project.</p>
-      <a href="https://file:///D:/Internship/demo3.html" target="_blank">View Project</a>
-    </div>
-    <div class="portfolio-item">
-      <img src="p2.jpg" alt="Project 2" style="width:100%">
-      <h3>Project 2 Title</h3>
-      <p>Short description of the project.</p>
-      <a href="https://project2.com" target="_blank">View Project</a>
-    </div>
-    <!-- Add more portfolio items as needed -->
-  </div>
-</section>
-
-<section id="contact" class="contact">
+<!-- Contact -->
+<section id="contact" class="contact" data-bg="#4a148c">
   <h2>Say Hello</h2>
-  <form action="YOUR-FORM-HANDLER-URL" method="post">
+  <form action="#" method="post">
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
     <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
     <button type="submit">Send Message</button>
   </form>
-  <p>Or email me at: <a href="mailto:trththakor@gmail.com">trththakor@gmail.com</a></p>
+  <p>Email: <a href="mailto:trththakor@gmail.com" style="color:#fff;">trththakor@gmail.com</a></p>
 </section>
 
 <footer>
-  <p>Tirth Thakor</p>
+  <p>© 2025 Tirth Thakor</p>
 </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section[data-bg]");
+    const body = document.body;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          body.style.backgroundColor = entry.target.getAttribute("data-bg");
+        }
+      });
+    }, { threshold: 0.5 });
+
+    sections.forEach(sec => observer.observe(sec));
+  });
+</script>
 
 </body>
 </html>
